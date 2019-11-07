@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default class NuevoComponente extends Component{
+export default class ServiceRows extends Component{
     render(){
         return (
-            <Text style={styles.texto}>
-                new Component
-            </Text>
+
+        <View style={{height: 400, padding: 10}}>
+          <Text style={{fontSize:20, color:'#333333'}}>Flexbox de Servicios</Text>
+
+          <View style={{backgroundColor: '#AAAAFF', flex: 1, borderRadius:5, flexDirection:'row'}} >
+
+          </View>
+        </View>
         );
     }
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, Button, View } from 'react-native';
-import NuevoComponente from './nuevoComponente';
+import { Platform, StyleSheet, Text, Button, View, Linking } from 'react-native';
+import DealsHeader from './DealsHeader';
+import ServiceRows from './ServiceRows';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -10,13 +12,17 @@ const instructions = Platform.select({
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container, {padding:100}}>
-        <NuevoComponente></NuevoComponente>
+      <ScrollView contentContainerStyle={styles.container, { flexGrow: 1, paddingTop: Platform.OS === 'ios' ? 40 : 30}}>
+        <DealsHeader/>
+        <ServiceRows/>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <Button title="Clickeame"> </Button>
-      </View>
+        <Button   onPress={() => {
+    //Linking.openURL('https://wa.me/5492324472305')    
+    Linking.openURL(`tel:${5492324472305}`)
+  }} title="Clickeame"> </Button>
+      </ScrollView>
     );
   }
 }
