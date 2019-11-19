@@ -9,6 +9,7 @@ import {createAppContainer, createSwitchNavigator} from 'react-navigation'
 import LoginScreen from './screens/LoginScreen'
 import DashboardScreen from './screens/DashboardScreen'
 import LoadingScreen from './screens/LoadingScreen'
+import * as Google from 'expo-google-app-auth';
 
 firebase.initializeApp(firebaseConfig)
 
